@@ -6,6 +6,11 @@ $owner = $env:GITHUB_OWNER
 $repo = $env:GITHUB_REPO
 $base_branch = $env:INPUT_GITHUB_BRANCH
 
+Write-Host "token: $token"
+Write-Host "owner: $owner"
+Write-Host "repo: $repo"
+Write-Host "base_branch: $base_branch"
+
 
 
 $url = "https://api.github.com/repos/$owner/$repo/pulls?state=closed"
