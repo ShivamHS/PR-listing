@@ -1,7 +1,10 @@
-$owner = "${GITHUB_OWNER}"
-$repo = "${GITHUB_REPO}"
-$token = "${INPUT_GITHUB_TOKEN}"
-$base_branch = "${INPUT_GITHUB_BRANCH}"
+# Get the GitHub token from the input
+$token = $env:INPUT_GITHUB_TOKEN
+
+# Get other inputs from the environment variables
+$owner = $env:GITHUB_OWNER
+$repo = $env:GITHUB_REPO
+$base_branch = $env:INPUT_GITHUB_BRANCH
 
 
 
