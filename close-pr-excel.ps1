@@ -1,8 +1,7 @@
-﻿
-
-$owner = "HenrySchein-C"
-$repo = "GEPAngular"
-$token = "" # Replace with your GitHub personal access token
+$owner = "${GITHUB_OWNER}"
+$repo = "${GITHUB_REPO}"
+$token = "${INPUT_GITHUB_TOKEN}"
+$base_branch = "${INPUT_GITHUB_BRANCH}"
 
 
 
@@ -25,8 +24,9 @@ foreach ($pr in $response) {
    $prClosedBy = $pr.user.login
    $prClosedAt = $pr.closed_at
    $prBaseBranch = $pr.base.ref
+   $prHeadBranch = $pr.head.ref
   
-   if (($prClosedAt -like "$today*") -and ($prBaseBranch -eq "uk_dev")) {
+   if (($prClosedAt -like "$today*") -and ($prBaseBranch -eq "$base_branch")) {
      
        $prData += [PSCustomObject]@{
            'PR Number' = $prNumber
@@ -34,6 +34,7 @@ foreach ($pr in $response) {
            'Closed By' = $prClosedBy
            'Closed At' = $prClosedAt
            'Base Branch' = $prBaseBranch
+           'Head Branch' = $prHeadBranch
        }
    }
 }
