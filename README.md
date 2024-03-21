@@ -5,10 +5,7 @@ This will list all the closed PRs which are merged to the branch. You can give t
 ```yaml
 name: List-PRs
 on:
-  push:
-    branches:
-      - master
-      - develop
+  workflow_dispatch:
 jobs:
   job_name:
     name: List All PRs
@@ -17,7 +14,7 @@ jobs:
       - name: Checkout repository
         uses: actions/checkout@v4
       - name: List PR
-        uses: ShivamHS/PR-listing@v0.0.0
+        uses: ShivamHS/PR-listing@v1.0.0
         with:
           repo_token: ${{ github.token }}
           owner: ${{github.owner}}
