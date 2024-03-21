@@ -1,22 +1,23 @@
-name: "Close PRs"
-description: "List PRs which are merged to "
-author: "Shivam Pant"
+name: Closed PRs Reporter
+
+description: Report closed pull requests on GitHub repository.
+author: Your Name
+branding:
+  icon: clipboard
+  color: blue
 inputs:
-  repo_token:
-    description: "The GITHUB_TOKEN secret"
-    required: true 
-  owner:
-    description: "Name of owner"
+  GITHUB_OWNER:
+    description: 'GitHub repository owner.'
     required: true
-  repo_name:
-    description: "Name of repo to perform the action"
+  GITHUB_REPO:
+    description: 'GitHub repository name.'
     required: true
-  base_branch:
-    description: "Name of base branch"
+  INPUT_GITHUB_TOKEN:
+    description: 'GitHub token for authentication.'
     required: true
-
-
+  INPUT_GITHUB_BRANCH:
+    description: 'Base branch name.'
+    required: true
 runs:
-  using: "Build"
-  run: |
-    pwsh -file close-pr-excel.ps1 -owner $owner -repo $repo_name -token $repo_token -base_branch $base_branch
+  using: 'docker'
+  image: 'Dockerfile'
