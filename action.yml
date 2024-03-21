@@ -19,4 +19,4 @@ inputs:
 runs:
   using: "Build"
   run: |
-    .\close-pr-excel.ps1
+    pwsh -file close-pr-excel.ps1 -owner $owner -repo $repo_name -token $repo_token -base_branch $base_branch
