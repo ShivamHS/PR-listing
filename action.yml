@@ -1,0 +1,22 @@
+name: "Close PRs"
+description: "List PRs which are merged to "
+author: "Shivam Pant"
+inputs:
+  repo_token:
+    description: "The GITHUB_TOKEN secret"
+    required: true 
+  owner:
+    description: "Name of owner"
+    required: true
+  repo_name:
+    description: "Name of repo to perform the action"
+    required: true
+  base_branch:
+    description: "Name of base branch"
+    required: true
+
+
+runs:
+  using: "Build"
+  run: |
+    .\close-pr-excel.ps1
