@@ -1,9 +1,6 @@
-# Get the GitHub token from the input
-$token = $env:INPUT_GITHUB_TOKEN
-
-# Get other inputs from the environment variables
 $owner = $env:GITHUB_OWNER
 $repo = $env:GITHUB_REPO
+$token = $env:INPUT_GITHUB_TOKEN
 $base_branch = $env:INPUT_GITHUB_BRANCH
 
 Write-Host "token: $token"
@@ -19,6 +16,8 @@ $headers = @{
    "Authorization" = "Bearer $token"
    "Accept" = "application/vnd.github.v3+json"
 }
+
+Write-Host "url: $url"
 
 $today = Get-Date -Format "yyyy-MM-dd"
 
