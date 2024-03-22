@@ -1,5 +1,4 @@
 name: Closed PRs Reporter
-
 description: Report closed pull requests on GitHub repository.
 author: Your Name
 branding:
