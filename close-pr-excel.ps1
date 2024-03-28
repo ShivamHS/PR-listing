@@ -23,8 +23,6 @@ $today = Get-Date -Format "yyyy-MM-dd"
 
 $response = Invoke-RestMethod -Uri $url -Headers $headers -Method Get
 
-$prData = @()
-
 foreach ($pr in $response) {
    $prNumber = $pr.number
    $prTitle = $pr.title
@@ -35,7 +33,7 @@ foreach ($pr in $response) {
   
    if (($prClosedAt -like "$today*") -and ($prBaseBranch -eq "$base_branch")) {
      
-     Write-Host "PR #$prNumber - Title: $prTitle, Closed By: $prClosedBy, Closed At: $prClosedAt, Base Branch: $prBaseBranch, Head Branch: $prHeadBranch"
+     Write-Host "PR #$prNumber"
        }
    }
 
