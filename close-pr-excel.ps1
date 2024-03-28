@@ -20,9 +20,10 @@ $headers = @{
 Write-Host "url: $url"
 
 $today = Get-Date -Format "yyyy-MM-dd"
-
+Write-Host "$today"
 $response = Invoke-RestMethod -Uri $url -Headers $headers -Method Get
 
+Write-Host "$response"
 foreach ($pr in $response) {
    $prNumber = $pr.number
    $prTitle = $pr.title
