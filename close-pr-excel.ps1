@@ -46,6 +46,5 @@ foreach ($pr in $response) {
    }
 }
 
-$csvFilePath = " $env:GITHUB_WORKSPACE\Closed_PRs_$($owner)_$($repo)_$(Get-Date -Format 'yyyyMMdd_HHmmss').csv"
-$prData | Export-Csv -Path $csvFilePath -NoTypeInformation
-Write-Host "Data exported to $csvFilePath."
+$prData | ConvertTo-Csv -NoTypeInformation
+
