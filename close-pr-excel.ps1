@@ -38,6 +38,5 @@ foreach ($pr in $response) {
      Write-Output "PR #$prNumber - Title: $prTitle, Closed By: $prClosedBy, Closed At: $prClosedAt, Base Branch: $prBaseBranch, Head Branch: $prHeadBranch"
        }
    }
-}
 
 
