@@ -18,5 +18,10 @@ inputs:
     description: 'Base branch name.'
     required: true
 runs:
-  using: 'docker'
-  image: 'Dockerfile'
+  using: docker
+  image: Dockerfile
+  args:
+    - ${{ inputs.GITHUB_OWNER }}
+    - ${{ inputs.GITHUB_REPO }}
+    - ${{ inputs.INPUT_GITHUB_TOKEN }}
+    - ${{ inputs.INPUT_GITHUB_BRANCH }}
