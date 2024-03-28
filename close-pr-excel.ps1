@@ -35,7 +35,7 @@ foreach ($pr in $response) {
   
    if (($prClosedAt -like "$today*") -and ($prBaseBranch -eq "$base_branch")) {
      
-     Write-Output "PR #$prNumber - Title: $prTitle, Closed By: $prClosedBy, Closed At: $prClosedAt, Base Branch: $prBaseBranch, Head Branch: $prHeadBranch"
+     Write-Host "PR #$prNumber - Title: $prTitle, Closed By: $prClosedBy, Closed At: $prClosedAt, Base Branch: $prBaseBranch, Head Branch: $prHeadBranch"
        }
    }
 
