@@ -11,10 +11,10 @@ inputs:
   GITHUB_REPO:
     description: 'GitHub repository name.'
     required: true
-  INPUT_GITHUB_TOKEN:
+  GITHUB_TOKEN:
     description: 'GitHub token for authentication.'
     required: true
-  INPUT_GITHUB_BRANCH:
+  GITHUB_BRANCH:
     description: 'Base branch name.'
     required: true
 runs:
