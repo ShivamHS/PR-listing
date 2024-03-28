@@ -47,4 +47,4 @@ foreach ($pr in $response) {
 }
 
 $prData | ConvertTo-Csv -NoTypeInformation
-
+Write-Host "$prData"
