@@ -1,5 +1,5 @@
-$owner = $env:GITHUB_OWNER
-$repo = $env:GITHUB_REPO
+$owner = $env:INPUT_GITHUB_OWNER
+$repo = $env:INPUT_GITHUB_REPO
 $token = $env:INPUT_GITHUB_TOKEN
 $base_branch = $env:INPUT_GITHUB_BRANCH
 
