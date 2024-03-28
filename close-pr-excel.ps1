@@ -35,16 +35,9 @@ foreach ($pr in $response) {
   
    if (($prClosedAt -like "$today*") -and ($prBaseBranch -eq "$base_branch")) {
      
-       $prData += [PSCustomObject]@{
-           'PR Number' = $prNumber
-           'Title' = $prTitle
-           'Closed By' = $prClosedBy
-           'Closed At' = $prClosedAt
-           'Base Branch' = $prBaseBranch
-           'Head Branch' = $prHeadBranch
+     Write-Output "PR #$prNumber - Title: $prTitle, Closed By: $prClosedBy, Closed At: $prClosedAt, Base Branch: $prBaseBranch, Head Branch: $prHeadBranch"
        }
    }
 }
 
-$prData | ConvertTo-Csv -NoTypeInformation
-Write-Host "$prData"
+
