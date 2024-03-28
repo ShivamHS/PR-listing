@@ -13,4 +13,4 @@ COPY close-pr-excel.ps1 /close-pr-excel.ps1
 # CMD ["pwsh", "-File", "/close-pr-excel.ps1"]
 
 # CMD ["pwsh", "-File", "/close-pr-excel.ps1", "-owner", "$GITHUB_OWNER", "-repo", "$GITHUB_REPO", "-token", "$INPUT_GITHUB_TOKEN", "-base_branch", "$INPUT_GITHUB_BRANCH"]
-CMD .\close-pr-excel.ps1 -owner "GITHUB_OWNER" -repo "GITHUB_REPO" -token "INPUT_GITHUB_TOKEN" -base_branch "INPUT_GITHUB_BRANCH"
+CMD ["pwsh", "-File", "close-pr-excel.ps1 -owner "GITHUB_OWNER" -repo "GITHUB_REPO" -token "INPUT_GITHUB_TOKEN" -base_branch "INPUT_GITHUB_BRANCH""]
